@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>App con Web Components</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <aplicacion-root></aplicacion-root>
+
+  <script type="module" src="./api.js"></script>
+
+  <script type="module" src="./components/pantalla-login.js"></script>
+
+
+  <script>
+    class AplicacionRoot extends HTMLElement {
+      constructor(){
+        super();
+        this.attachShadow({ mode:'open' });
+        this.route = { screen: "login", params: {} };
+        window.addEventListener("hashchange", () => this.fromHash());
+      }
+
+      connectedCallback(){ this.fromHash(); }
+
+      fromHash(){
+        const raw = location.hash.replace(/^#\/?/, "");
+        if(!raw){ this.irA("login"); return; }
+        const [scr, query] = raw.split("?");
+        const params = Object.fromEntries(new URLSearchParams(query || ""));
+        this.irA(scr || "login", params);
+      }
+
+      toHash(){
+        const q = new URLSearchParams(this.route.params || {}).toString();
+        const h = `#/${this.route.screen}${q ? ("?"+q) : ""}`;
+        if(location.hash !== h) location.hash = h;
+      }
+
+      irA(screen, params = {}){
+        this.route = { screen, params };
+        this.render();
+        this.toHash();
+      }
+
+      render(){
+        this.shadowRoot.innerHTML = "";
+        let el;
+
+        if(this.route.screen === "login") el = document.createElement("pantalla-login");
+
+        // Si la ruta es "dashboard", carga el listado de cuentas y ofertas
+        
+
+        el.addEventListener("navegar", (ev)=>{
+          const { screen, params } = ev.detail || {};
+          this.irA(screen, params);
+        });
+
+        this.shadowRoot.appendChild(el);
+      }
+    }
+
+    customElements.define("aplicacion-root", AplicacionRoot);
+  </script>
+</body>
+</html>
