@@ -1,8 +1,36 @@
 {
   "users": [
-    { "id": 1, "email": "user@bbva.com", "password": "123456", "name": "Carlos E. Franco" }
+    { "id": 1, "email": "user@bbva.com", "password": "123456", "name": "Carlos E. Franco" },
+    { "id": 2, "email": "baldo@bbva.com", "password": "32431", "name": "Baldomero Aguilar" }
   ],"accounts": [
-
+    {
+      "id": 1009,
+      "userId": 1,
+      "alias": "Cuenta Nómina",
+      "number": "0123 4567 8901 2345",
+      "currency": "MXN",
+      "balance": 15890.24,
+      "frequentOps": [
+        "Transferir",
+        "Pagar servicio",
+        "Retiro sin tarjeta",
+        "Depositar"
+      ]
+    },
+    {
+      "id": 1010,
+      "userId": 2,
+      "alias": "Ahorro Meta",
+      "number": "0123 9876 5432 1098",
+      "currency": "MXN",
+      "balance": 8200.00,
+      "frequentOps": [
+        "Transferir",
+        "Añadir meta",
+        "Retiro sin tarjeta",
+        "Depositar"
+      ]
+    }
   ],
   "offers": [
     

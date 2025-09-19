@@ -11,7 +11,7 @@
   <script type="module" src="./api.js"></script>
 
   <script type="module" src="./components/pantalla-login.js"></script>
-
+  <script type="module" src="./components/pantalla-dashboard.js"></script>
 
   <script>
     class AplicacionRoot extends HTMLElement {
@@ -50,7 +50,7 @@
 
         if(this.route.screen === "login") el = document.createElement("pantalla-login");
 
-        // Si la ruta es "dashboard", carga el listado de cuentas y ofertas
+        else if(this.route.screen === "dashboard") el = document.createElement("pantalla-dashboard");
         
 
         el.addEventListener("navegar", (ev)=>{
