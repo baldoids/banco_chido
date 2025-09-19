@@ -11,14 +11,57 @@ export class PantallaLogin extends HTMLElement {
   renderizar() {
     this.shadowRoot.innerHTML = `
       <style>
-        :host{display:block;height:100dvh;background:linear-gradient(135deg,#283593,#1976d2);
-          font-family: system-ui,Segoe UI,Roboto,Arial,sans-serif}
-        .contenedor{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:16px}
-        h2{margin-bottom:16px;font-size:1.8rem;font-weight:800}
-        input{margin:10px;padding:12px;border-radius:10px;border:none;width:min(320px,92vw);font-size:1rem;outline:0}
-        input:focus{box-shadow:0 0 0 3px rgba(255,255,255,.35)}
-        button{margin-top:14px;padding:12px;width:min(340px,92vw);border:0;border-radius:999px;font-weight:800;background:#ffca28;color:#283593;cursor:pointer}
-        a{margin-top:16px;color:#bbdefb;cursor:pointer;font-size:.95rem;text-decoration:underline}
+        :host{
+          display:block;height:100dvh;
+          background:linear-gradient(135deg,#283593,#1976d2);
+          font-family: system-ui,Segoe UI,Roboto,Arial,sans-serif
+        }
+        .contenedor{
+          height:100%;display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:center;
+          color:#fff;
+          text-align:center;
+          padding:16px
+        }
+
+        h2{
+          margin-bottom:16px;
+          font-size:1.8rem;
+          font-weight:800
+        }
+
+        input{
+          margin:10px;
+          padding:12px;
+          border-radius:10px;
+          border:none;
+          width:min(320px,92vw);
+          font-size:1rem;
+          outline:0
+        }
+        input:focus{
+          box-shadow:0 0 0 3px rgba(255,255,255,.35)
+        }
+        button{
+          margin-top:14px;
+          padding:12px;
+          width:min(340px,92vw);
+          border:0;border-radius:999px;
+          font-weight:800;
+          background:#ffca28;
+          color:#283593;
+          cursor:pointer
+          }
+
+        a{
+          margin-top:16px;
+          color:#bbdefb;
+          cursor:pointer;
+          font-size:.95rem;
+          text-decoration:underline
+        }
       </style>
       <div class="contenedor">
         <h2>Bienvenido</h2>
