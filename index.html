@@ -12,6 +12,7 @@
 
   <script type="module" src="./components/pantalla-login.js"></script>
   <script type="module" src="./components/pantalla-dashboard.js"></script>
+  <script type="module" src="./components/pantalla-detalle.js"></script>
 
   <script>
     class AplicacionRoot extends HTMLElement {
@@ -52,6 +53,11 @@
 
         else if(this.route.screen === "dashboard") el = document.createElement("pantalla-dashboard");
         
+         else if(this.route.screen === "detalle") {
+          el = document.createElement("pantalla-detalle");
+          el.routeParams = this.route.params;
+        } 
+        else el = document.createElement("pantalla-login");
 
         el.addEventListener("navegar", (ev)=>{
           const { screen, params } = ev.detail || {};

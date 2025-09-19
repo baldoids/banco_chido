@@ -1,7 +1,8 @@
 {
   "users": [
     { "id": 1, "email": "user@bbva.com", "password": "123456", "name": "Carlos E. Franco" },
-    { "id": 2, "email": "baldo@bbva.com", "password": "32431", "name": "Baldomero Aguilar" }
+    { "id": 2, "email": "baldo@bbva.com", "password": "32431", "name": "Baldomero Aguilar" },
+    { "id": 3, "email": "jose@bbva.com", "password": "12345", "name": "Jose Pimentel"}
   ],"accounts": [
     {
       "id": 1009,
@@ -30,9 +31,43 @@
         "Retiro sin tarjeta",
         "Depositar"
       ]
+    },
+    {
+      "id": 1011,
+      "userId": 3,
+      "alias": "Nomina",
+      "number": "0123 9876 7261 1561",
+      "currency": "MXN",
+      "balance": 10200.00,
+      "frequentOps": [
+        "Transferir",
+        "Pagar servicio",
+        "Retiro sin tarjeta",
+        "Depositar"
+      ]
     }
   ],
   "offers": [
-    
+        {
+      "id": 201,
+      "bank": "BBVA",
+      "title": "Tarjeta Azul BBVA",
+      "description": "Sin anualidad el primer año. Acumula puntos.",
+      "color": "#00A1E0"
+    },
+    {
+      "id": 202,
+      "bank": "BBVA",
+      "title": "Crédito de Nómina",
+      "description": "Tasa preferencial por domiciliar tu nómina.",
+      "color": "#6CDBE6"
+    },
+    {
+      "id": 203,
+      "bank": "BBVA",
+      "title": "Inversión Día a Día",
+      "description": "Rinde diario, liquidez inmediata.",
+      "color": "#2D3E50"
+    }
   ]
 }
